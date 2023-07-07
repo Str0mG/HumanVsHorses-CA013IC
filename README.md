@@ -19,17 +19,17 @@ Uma das possiveis limitações seriam o tamanho e diversidade do conjunto de dad
 ## Repositório do projeto
 
 - [GitHub](https://github.com/Str0mG/HumanVsHorses-CA013IC)
-- [Video](https://youtu.be/)
+- [Video](https://drive.google.com/file/d/15BFsliGAEfBtdO-s8K7THxhgNXONJPtn/view?usp=sharing)
 
 ## Classicador e Acurácia
 
 - Usando Ramdom Forest, na qual os hiperparâmetros foram obtidos por meio de GridSearchCV, obtendo uma acurácia de 84.375%.
 
-![Gráfico Acurácia](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/GraficoAcuracia.png)
+![Gráfico Acurácia](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/GraficoAcuracia.png?raw=true)
 
 Com base no gráfico, explicaremos mais sobre o código 'canny hog RF' cuja Matriz de Confusão é a seguinte:
 
-![Matriz de Confusão](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/Canny_HOG_RF.png)
+![Matriz de Confusão](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/Canny_HOG_RF.png?raw=true)
 ## Instalação
 
 Para executar este projeto, siga estes passos:
