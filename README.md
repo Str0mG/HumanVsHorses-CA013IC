@@ -25,8 +25,11 @@ Uma das possiveis limitações seriam o tamanho e diversidade do conjunto de dad
 
 - Usando Ramdom Forest, na qual os hiperparâmetros foram obtidos por meio de GridSearchCV, obtendo uma acurácia de 84.375%.
 
-![Matriz de confusão](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/GraficoAcuracia.png)
+![Gráfico Acurácia](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/GraficoAcuracia.png)
 
+Com base no gráfico, explicaremos mais sobre o código 'canny hog RF' cuja Matriz de Confusão é a seguinte:
+
+![Matriz de Confusão](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/Canny_HOG_RF.png)
 ## Installation
 
 To run this project, follow these steps:
