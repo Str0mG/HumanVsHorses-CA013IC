@@ -1,12 +1,9 @@
-
-import os
-import cv2
-import warnings
+# libs
+import os, cv2, warnings
 from tqdm import tqdm
 from skimage.feature import hog
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, accuracy_score
 from mlxtend.plotting import plot_confusion_matrix
-from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 import matplotlib.pyplot as plt
@@ -87,7 +84,7 @@ def TrainRF(features, labels):
     return best_model
 
 def Main():
-    
+    # Maybe wont work in linux
     trainPath = '.\horse-or-human\\train'
     testPath = '.\horse-or-human\\validation'
 

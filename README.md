@@ -1,4 +1,4 @@
-## Titulo do Projeto
+## Projeto Final de Processamento de Imagens
 
 ### Classificação de humanos e cavalos em imagens
 
@@ -25,7 +25,7 @@ Uma das possiveis limitações seriam o tamanho e diversidade do conjunto de dad
 
 - Usando Ramdom Forest, na qual os hiperparâmetros foram obtidos por meio de GridSearchCV, obtendo uma acurácia de 84.375%.
 
-![Matriz de confusão](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/GraficoAcuracia.png)
+![Matriz de confusão](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/GraficoAcuracia.png)
 
 ## Installation
 
