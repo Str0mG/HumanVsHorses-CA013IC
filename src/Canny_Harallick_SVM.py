@@ -64,30 +64,12 @@ def extract_features(images):
   
 def TrainSVM(features, labels):
     
-    # Define the parameter grid
-    parameters = {
-        'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
-        'C': [0.1, 1, 10],
-        'gamma': ['auto', 0.01, 0.1],
-        'degree': [3, 5, 7]
-    }
-
     # Create a random forest classifier
     clf = svm.SVC()
 
-    # Instantiate the grid search model
-    grid_search = GridSearchCV(clf, parameters)
+    clf.fit(features, labels)
 
-    grid_search.fit(features, labels)
-
-    best_params = grid_search.best_params_
-
-    print("Best parameters found:", best_params)
-    # The best parameters found are: {'C': 10, 'degree': 3, 'gamma': 0.01, 'kernel': 'rbf'}
-
-    best_model = grid_search.best_estimator_
-
-    return best_model
+    return clf
 
 def Main():
     

@@ -70,24 +70,21 @@ def TrainRF(features, labels):
                'n_estimators': [100,250, 500],}
 
     # Create a random forest classifier
-    rf_model = RandomForestClassifier(criterion= 'log_loss', max_features= 'log2',n_estimators= 500)
+    rf_model = RandomForestClassifier()
 
-    rf_model.fit(features, labels)
+    # Instantiate the grid search model
+    grid_search = GridSearchCV(rf_model, parameters)
 
+    grid_search.fit(features, labels)
 
-    # # Instantiate the grid search model
-    # grid_search = GridSearchCV(rf_model, parameters)
+    best_params = grid_search.best_params_
 
-    # grid_search.fit(features, labels)
+    print("Best parameters found:", best_params)
+    # The best parameters found are: {'criterion': 'log_loss', 'max_features': 'log2', 'n_estimators': 500}
 
-    # best_params = grid_search.best_params_
+    best_model = grid_search.best_estimator_
 
-    # print("Best parameters found:", best_params)
-    # # The best parameters found are: {'criterion': 'log_loss', 'max_features': 'log2', 'n_estimators': 500}
-
-    # best_model = grid_search.best_estimator_
-
-    return rf_model
+    return best_model
 
 def Main():
     
