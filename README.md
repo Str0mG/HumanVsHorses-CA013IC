@@ -1,8 +1,8 @@
-## Titulo do Projeto
+## Project Title
 
-### Classificação de humanos e cavalos em imagens
+### Classification of Humans and Horses in Images
 
-## Equipe
+## Team
 
 - Breno Cesar Dupin - 1827642
 - Gabriel S. Trombini - 2209926
@@ -11,21 +11,20 @@
 
 - [Horses or Humans Dataset](https://www.kaggle.com/sanikamal/horses-or-humans-dataset)
 
-## Descrição do Projeto
+## Project Description
 
-O projeto "Classificação de humanos e cavalos em imagens" tem como objetivo criar um modelo de classificação capaz de distinguir imagens de humanos e cavalos. Na qual pode ter aplicações praticas uma vez que o modelo pode ser aplicado na indústria pecuária para identificar e rastrear animais, especialmente cavalos, em fazendas, estábulos e eventos relacionados à criação de animais.
-Uma das possiveis limitações seriam o tamanho e diversidade do conjunto de dados e o repertório de conhecimento sobre algoritmos de classificações.
+The "Classification of Humans and Horses in Images" project aims to create a classification model capable of distinguishing images of humans and horses. This could have practical applications as the model could be applied in the livestock industry to identify and track animals, especially horses, on farms, stables, and events related to animal breeding. One of the potential limitations could be the size and diversity of the dataset and the repertoire of knowledge about classification algorithms.
 
-## Repositório do projeto
+## Project Repository
 
 - [GitHub](https://github.com/Str0mG/HumanVsHorses-CA013IC)
-- [Video](https://youtu.be/)
+- [Video(PT-br)](https://youtu.be/)
 
-## Classicador e Acurácia
+## Classifier and Accuracy
 
-- Usando Ramdom Forest, na qual os hiperparâmetros foram obtidos por meio de GridSearchCV, obtendo uma acurácia de 84.375%.
+- Using Random Forest, with hyperparameters obtained through GridSearchCV, achieving an accuracy of 84.375%.
 
-![Matriz de confusão](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/GraficoAcuracia.png)
+![Confusion Matrix](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/GraficoAcuracia.png)
 
 ## Installation
 
