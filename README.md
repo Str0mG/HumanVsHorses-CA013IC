@@ -18,25 +18,28 @@ The "Classification of Humans and Horses in Images" project aims to create a cla
 ## Project Repository
 
 - [GitHub](https://github.com/Str0mG/HumanVsHorses-CA013IC)
-- [Video(PT-br)](https://youtu.be/)
+- [Video(PT-br)](https://drive.google.com/file/d/15BFsliGAEfBtdO-s8K7THxhgNXONJPtn/view?usp=sharing)
 
 ## Classifier and Accuracy
 
 - Using Random Forest, with hyperparameters obtained through GridSearchCV, achieving an accuracy of 84.375%.
 
-![Confusion Matrix](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/GraficoAcuracia.png)
+![Accuracy](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/GraficoAcuracia.png?raw=true)
+
+Based on the chart, we will explain more about the 'canny hog RF' code whose Confusion Matrix is as follows
+![Confusion Matrix](https://github.com/Str0mG/HumanVsHorses-CA013IC/blob/main/results/Canny_HOG_RF.png?raw=true)
 
 ## Installation
 
 To run this project, follow these steps:
 
-- Clone project of GitHub. Open you terminal and run the following command:
+- Clone the project from GitHub. Open your terminal and run the following command:
 
   ```bash
-  git clone https://github.com/Str0mG/CaptchaSolver.git
+  git clone https://github.com/Str0mG/HumanVsHorses-CA013IC
   ```
 
-- [Dowload DataSet Here!](https://www.kaggle.com/datasets/sanikamal/horses-or-humans-dataset)
+- [Download DataSet Here!](https://www.kaggle.com/datasets/sanikamal/horses-or-humans-dataset)
 
 - Remove the folder "horse-or-human" inside the main folder because it is repetitive.
 

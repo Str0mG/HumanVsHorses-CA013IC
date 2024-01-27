@@ -1,12 +1,9 @@
-
-import os
-import cv2
-import warnings
+# libs
+import os, cv2, warnings
 from tqdm import tqdm
 from skimage.feature import hog
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, accuracy_score
 from mlxtend.plotting import plot_confusion_matrix
-from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 import matplotlib.pyplot as plt
@@ -50,13 +47,13 @@ def extract_features(images):
 
     for image in tqdm(images):
             # Apply canny edge detector
-            edges = cv2.Canny(image,100,250)
+            edges = cv2.Canny(image, 100, 250)
 
-            # Invert the image
+            # Invert the image, edge black, background white
             invertida = cv2.bitwise_not(edges)
             
-            # Extract HOG features
-            fd, hog_image = hog(invertida, orientations=8, pixels_per_cell=(16, 16), cells_per_block=(1, 1), visualize=True)
+            # Extract HOG features (we got the params online)
+            fd, hog_image = hog(invertida, orientations = 8, pixels_per_cell = (16, 16), cells_per_block = (1, 1), visualize = True)
 
             features.append(fd)
 
@@ -67,7 +64,7 @@ def TrainRF(features, labels):
     # Define the parameter grid
     parameters = {'criterion': ['gini', 'entropy', 'log_loss'],
                'max_features':['auto','sqrt','log2'],
-               'n_estimators': [100,250, 500],}
+               'n_estimators': [100, 250, 500],}
 
     # Create a random forest classifier
     rf_model = RandomForestClassifier()
@@ -87,30 +84,38 @@ def TrainRF(features, labels):
     return best_model
 
 def Main():
-    
+    # Maybe wont work in linux
     trainPath = '.\horse-or-human\\train'
     testPath = '.\horse-or-human\\validation'
 
-    print("Starting Training...")
-    print("Getting images...")
+    print("[INFO] Starting Training...")
+    print("[INFO] Getting images...")
     images, labels = load_data(trainPath)
-    print("Preprocessing images...")
+
+    print("[INFO] Preprocessing images...")
     image_preprocessed = preprocess(images)
-    print("Extracting features...")
+
+    print("[INFO] Extracting features...")
     trainFeatures = extract_features(image_preprocessed)
-    print("Training RF...")
+
+    print("[INFO] Training RF...")
     rf = TrainRF(trainFeatures, labels)
     
-    print("Starting Testing...")
-    print("Getting test images...")
+
+    print("[INFO] Starting Testing...")
+    print("[INFO] Getting test images...")
     testImages, testLabels = load_data(testPath)
-    print("Preprocessing test images...")
+
+    print("[INFO] Preprocessing test images...")
     image_preprocessed = preprocess(testImages)
-    print("Extracting test features...")
+
+    print("[INFO] Extracting test features...")
     testFeatures = extract_features(image_preprocessed)
-    print("Predicting...")
+
+    print("[INFO] Predicting...")
     predictions = rf.predict(testFeatures)
-    print("Accuracy: ", accuracy_score(testLabels, predictions))
+
+    print("[INFO] Accuracy: ", accuracy_score(testLabels, predictions))
     
     cm = confusion_matrix(testLabels, predictions)
 
